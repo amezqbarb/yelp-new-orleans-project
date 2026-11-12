@@ -31,6 +31,10 @@ business <- business_raw |>
     categories
   )
 
+dim(business)
+glimpse(business)
+head(business, 3)
+
 new_orleans_restaurants <- business |>
   filter(
     state == "LA",
@@ -47,6 +51,17 @@ new_orleans_restaurants <- business |>
     business_name = str_squish(name)
   ) |>
   distinct(business_id, .keep_all = TRUE)
+
+dim(new_orleans_restaurants)
+glimpse(new_orleans_restaurants)
+
+new_orleans_restaurants |>
+  summarise(
+    number_of_restaurants = n(),
+    missing_latitude = sum(is.na(latitude)),
+    missing_longitude = sum(is.na(longitude)),
+    missing_categories = sum(is.na(categories))
+  )
 
 dir.create(
   "data/new_orleans",
