@@ -32,7 +32,7 @@ I compared Census tracts and ZIP Code Tabulation Areas (ZCTAs).
 
 I used restaurant latitude and longitude values to create map points. I then used an official Louisiana boundary from the Census TIGER/Line data and completed a spatial join.
 
-![Map of selected restaurants](figures/new_orleans_restaurants_map.png)
+![Map of selected restaurants](figures/restaurants_map.png)
 
 The spatial join showed that 632 restaurants were inside the official New Orleans boundary. 16 restaurants were labeled “New Orleans” by Yelp but were located outside the official boundary in nearby places.
 
